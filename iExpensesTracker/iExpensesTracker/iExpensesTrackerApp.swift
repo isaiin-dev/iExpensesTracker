@@ -11,6 +11,8 @@ import Firebase
 
 @main
 struct iExpensesTrackerApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,7 +28,13 @@ struct iExpensesTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isUserLoggedIn {
+                ContentView()
+                    .preferredColorScheme(.light)
+            } else {
+                LoginView()
+                    .preferredColorScheme(.light)
+            }
         }
         .modelContainer(sharedModelContainer)
     }
