@@ -15,7 +15,7 @@ struct iExpensesTrackerApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            LocalExpense.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
