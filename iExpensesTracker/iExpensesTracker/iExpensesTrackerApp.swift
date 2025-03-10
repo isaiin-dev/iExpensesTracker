@@ -29,7 +29,7 @@ struct iExpensesTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             if authViewModel.isUserLoggedIn {
-                ContentView()
+                MainTabView()
                     .preferredColorScheme(.light)
             } else {
                 LoginView()
