@@ -31,9 +31,11 @@ struct iExpensesTrackerApp: App {
             if authViewModel.isUserLoggedIn {
                 MainTabView()
                     .preferredColorScheme(.light)
+                    .environmentObject(authViewModel)
             } else {
                 LoginView()
                     .preferredColorScheme(.light)
+                    .environmentObject(authViewModel)
             }
         }
         .modelContainer(sharedModelContainer)
