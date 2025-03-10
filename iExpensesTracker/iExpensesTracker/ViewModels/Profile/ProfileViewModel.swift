@@ -17,11 +17,7 @@ final class ProfileViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var photoURL: URL? = nil
     
-    @AppStorage("storagePreference") var storagePreference: String = StorageOption.cloud.rawValue {
-        didSet {
-            
-        }
-    }
+    @AppStorage("storagePreference") var storagePreference: String = StorageOption.cloud.rawValue 
     
     init() {
         fetchUserData()
