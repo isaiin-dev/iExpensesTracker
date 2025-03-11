@@ -12,6 +12,7 @@ struct ProfileView: View {
     @AppStorage("enableNotifications") private var enableNotifications = false
     @EnvironmentObject private var authViewModel: AuthViewModel
     @State private var showDemoAlert = false
+    @State private var showDeleteAllAlert = false
     
     var body: some View {
         ZStack {
