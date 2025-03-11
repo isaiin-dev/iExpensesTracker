@@ -10,15 +10,12 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-/// Handles user authentication with Google and Apple.
 final class AuthService {
     
     static let shared = AuthService()
     
     private init() { }
     
-    /// Signs in with Google.
-    /// - Parameter completion: Returns a Firebase `AuthDataResult` or an `Error`.
     func signInWithGoogle(presentingVC: UIViewController, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
             completion(.failure(AuthError.invalidClientID))
